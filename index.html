@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Demostración del DOM</title>
+    <link rel="stylesheet" href="css\estilos.css">
+</head>
+<body>
+
+    <h1>Práctica de Manipulación del DOM</h1>
+
+    <!-- Ejemplo 1: Cambiar texto con textContent y addEventListener -->
+    <div class="box">
+        <h2>Ejemplo 1: Saludo dinámico</h2>
+        <p id="mensaje">Texto original...</p>
+        <button id="btnCambiar">Cambiar Mensaje</button>
+    </div>
+
+    <!-- Ejemplo 2: Modificar valor e interactuar mediante value -->
+    <div class="box">
+        <h2>Ejemplo 2: Captura de Input</h2>
+        <input type="text" id="nombreInput" placeholder="Escribe tu nombre">
+        <button id="btnSaludar">Saludar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        // Ejemplo 1: Selección y evento click
+        const mensaje = document.getElementById('mensaje');
+        const btnCambiar = document.getElementById('btnCambiar');
+
+        btnCambiar.addEventListener('click', () => {
+            mensaje.textContent = '¡Hola! El texto ha sido modificado mediante el DOM.';
+        });
+
+        // Ejemplo 2: Captura de propiedad value
+        const nombreInput = document.getElementById('nombreInput');
+        const btnSaludar = document.getElementById('btnSaludar');
+        const resultado = document.getElementById('resultado');
+
+        btnSaludar.addEventListener('click', () => {
+            const valor = nombreInput.value;
+            resultado.textContent = `¡Bienvenido/a, ${valor}!`;
+        });
+    </script>
+</body>
+</html>
